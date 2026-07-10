@@ -5,6 +5,10 @@ spring:
   application:
     name: ms-razas
 
+  sql:
+    init:
+      mode: always
+
   # Base de datos PostgreSQL (Render)
   datasource:
     url: ${DB_URL}
@@ -19,6 +23,7 @@ spring:
     show-sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
 
   # Compatibilidad Spring Cloud y Arranque
   cloud:
