@@ -1,0 +1,47 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-razas
+
+  sql:
+    init:
+      mode: always
+
+  # Base de datos propia de ms-razas (Docker)
+  datasource:
+    url: jdbc:mysql://localhost:3306/razas_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA / Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    defer-datasource-initialization: true
+
+  # Compatibilidad Spring Cloud y Arranque
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  main:
+    web-application-type: servlet
+
+# Eureka Client - Desactivado para uso independiente
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+# Documentación Swagger / OpenApi
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+    version: openapi_3_0
