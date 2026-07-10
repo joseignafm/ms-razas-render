@@ -31,6 +31,7 @@ Este microservicio gestiona el catálogo de razas disponibles en el mundo RPG Re
 
 Una vez desplegado, accede a la documentación interactiva en:
 
+https://ms-razas.onrender.com/swagger-ui/index.html
 
 ## Ejecución local
 
