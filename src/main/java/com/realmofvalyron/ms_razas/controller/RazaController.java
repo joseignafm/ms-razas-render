@@ -6,6 +6,7 @@ import com.realmofvalyron.ms_razas.dto.RazaResponse;
 import com.realmofvalyron.ms_razas.service.RazaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +14,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/razas")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class RazaController {
 
-    private final RazaService razaService;
-    private final RazaModelAssembler assembler;
+    @Autowired
+    private RazaService razaService;
+    @Autowired
+    private RazaModelAssembler assembler;
 
     @PostMapping
     public ResponseEntity<RazaResponse> crearRaza(@Valid @RequestBody RazaRequest request) {

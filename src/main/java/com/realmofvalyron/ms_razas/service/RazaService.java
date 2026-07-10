@@ -5,16 +5,18 @@ import com.realmofvalyron.ms_razas.dto.RazaResponse;
 import com.realmofvalyron.ms_razas.entity.Raza;
 import com.realmofvalyron.ms_razas.repository.RazaRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class RazaService {
 
-    private final RazaRepository razaRepository;
+    @Autowired
+    private RazaRepository razaRepository;
 
     public RazaResponse crearRaza(RazaRequest request) {
 
